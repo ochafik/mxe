@@ -18,7 +18,6 @@ MXE_TARGETS        := i686-w64-mingw32.static
 DEFAULT_MAX_JOBS   := 6
 PRINTF_COL_1_WIDTH := 13
 SOURCEFORGE_MIRROR := downloads.sourceforge.net
-BINTRAY_MIRROR     := dl.bintray.com
 MXE_MIRROR         := https://mirror.mxe.cc/pkg
 PKG_MIRROR         := https://mxe-pkg.s3.amazonaws.com
 PKG_CDN            := http://d1yihgixbnrglp.cloudfront.net
