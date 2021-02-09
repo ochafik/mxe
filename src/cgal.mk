@@ -7,9 +7,9 @@ $(PKG)_VERSION  := 5.2
 $(PKG)_CHECKSUM := 4daa32c14b78391725836d0975906c2d265885c4a6d83d6e1662ff90bf321dcb
 # using / in tag name means we have to set SUBDIR, FILE, URL
 $(PKG)_GH_CONF  := CGAL/cgal/tags, v
-$(PKG)_SUBDIR   := v$($(PKG)_VERSION)
+$(PKG)_SUBDIR   := CGAL-$($(PKG)_VERSION)
 $(PKG)_FILE     := CGAL-$($(PKG)_VERSION)-library.tar.xz
-$(PKG)_URL      := https://github.com/CGAL/cgal/releases/download/$($(PKG)_SUBDIR)/$($(PKG)_FILE)
+$(PKG)_URL      := https://github.com/CGAL/cgal/releases/download/v$($(PKG)_VERSION)/$($(PKG)_FILE)
 $(PKG)_DEPS     := cc boost gmp mpfr qtbase
 
 define $(PKG)_BUILD
