@@ -20,8 +20,7 @@ define $(PKG)_BUILD
         -DCGAL_INSTALL_BIN_DIR:STRING="bin" \
         -DCGAL_Boost_USE_STATIC_LIBS:BOOL=$(CMAKE_STATIC_BOOL) \
         -DWITH_OpenGL:BOOL=ON \
-        -DWITH_ZLIB:BOOL=ON \
-        -C'$(PWD)/src/cgal-TryRunResults.cmake'
+        -DWITH_ZLIB:BOOL=ON
 
     $(MAKE) -C '$(BUILD_DIR)' -j $(JOBS)
     $(MAKE) -C '$(BUILD_DIR)' -j 1 install
@@ -30,5 +29,7 @@ define $(PKG)_BUILD
     '$(TARGET)-g++' \
         -W -Wall -Werror \
         '$(TEST_FILE)' -o '$(PREFIX)/$(TARGET)/bin/test-$(PKG).exe' \
-        `'$(TARGET)-pkg-config' $(PKG) --cflags --libs`
+        '-I$(PREFIX)/$(TARGET)/include' \
+        '-L$(PREFIX)/$(TARGET)/lib' \
+        -lgmp
 endef
